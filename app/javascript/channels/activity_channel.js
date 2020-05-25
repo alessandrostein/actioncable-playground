@@ -3,7 +3,8 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create({ channel: "ActivityChannel" }, {
   received(event) {
-    const element = document.getElementById('events');
-    element.insertAdjacentHTML("beforeend", event.message);
+    console.log(event);
+    const el = document.getElementById('events');
+    el.insertAdjacentHTML("beforeend", event.message);
   }
 })
